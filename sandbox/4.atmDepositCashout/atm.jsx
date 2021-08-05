@@ -1,5 +1,5 @@
 const Account = () => {
-    const [transaction, setTransaction] = React.useState(0);
+    let transaction = 0;
     const [currentBalance, setCurrentBalance] = React.useState(0);
     const [isDeposit, setIsDeposit] = React.useState(true);
     let status = `Account Balance $${currentBalance}`;
@@ -7,7 +7,7 @@ const Account = () => {
         if (!isDeposit && Number(event.target.value > currentBalance)) {
             return alert ("You don't have enough funds");
         };
-        setTransaction(Number(event.target.value));
+        transaction = (Number(event.target.value));
         console.log(isDeposit);
     };
     const handleSubmit = () => {
